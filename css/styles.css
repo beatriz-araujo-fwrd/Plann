@@ -98,4 +98,9 @@
     .rich-text-legal h5 {
         font-size: 1.25rem;
     }
+/*
+*   ABOUT - Team Section
+*/
+.team_list_item.active {
+    background-color: var(--neutral-800);
 }
