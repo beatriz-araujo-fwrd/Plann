@@ -98,6 +98,15 @@
     .rich-text-legal h5 {
         font-size: 1.25rem;
     }
+}
+
+/*
+*   SERVICES - Custom Nav
+*/
+.layout350_tabs-menu_wrapper.shrink {
+    flex: 0;
+}
+
 /*
 *   ABOUT - Team Section
 */

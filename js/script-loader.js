@@ -1,6 +1,7 @@
 import { mainInit } from './main.js';
 import { navBarMenu } from './menu.js';
 import { homepage } from './homepage.js';
+import { services } from './services.js';
 import { about } from './about.js';
 import { swiperInit } from './swiper.js';
 import { works } from './works.js';
@@ -12,6 +13,7 @@ import { footerDate } from './footer-date.js';
 mainInit();
 navBarMenu();
 homepage();
+services();
 about();
 works();
 swiperInit();
