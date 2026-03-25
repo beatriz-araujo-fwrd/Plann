@@ -1,3 +1,5 @@
+// note: not all script files are being loaded by default (example: faqs...)
+
 import { mainInit } from './main.js';
 import { navBarMenu } from './menu.js';
 import { homepage } from './homepage.js';
@@ -8,16 +10,23 @@ import { works } from './works.js';
 import { form } from './form.js';
 import { footerDate } from './footer-date.js';
 
-// not all script files are being loaded by default (example: faqs...)
 
-mainInit();
-navBarMenu();
-homepage();
-services();
-about();
-works();
-swiperInit();
-form();
-footerDate();
+function init() {
+    mainInit();
+    navBarMenu();
+    homepage();
+    services();
+    about();
+    works();
+    swiperInit();
+    form();
+    footerDate();
 
-console.log("Loading main scripts loader");
+    console.log("Running main scripts loader");
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}
