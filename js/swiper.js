@@ -67,6 +67,21 @@ export function swiperInit() {
 
     }
 
+    // ABOUT Team Swiper
+    const teamSwiperContainer = document.querySelector('.team_card_list_swiper');
+    if (teamSwiperContainer && window.innerWidth <= 767) {
+        hpWorksSwiper = new Swiper(teamSwiperContainer, {
+            slidesPerView: 1.2,
+            spaceBetween: 14,
+            // centeredSlides: true,
+            // direction: 'horizontal',
+            loop: false,
+            // autoWidth: true,
+
+            // freeMode: true,
+        });
+    }
+
     console.log("running swiperInit()");
 
 }
