@@ -9,7 +9,7 @@ export function about() {
                 trigger: card,
                 start: 'top 128px',
                 end: 'bottom 128px',
-                markers: true,
+                // markers: true,
                 onEnter: () => {
                     let activeIndex = document.querySelector('.team_list_item.active');
 
