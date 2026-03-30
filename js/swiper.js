@@ -1,7 +1,5 @@
 export function swiperInit() {
 
-    console.log("running swiper.js");
-
     // Init Homepage Works Swiper
     let hpWorksSwiper = document.querySelector('.hp_works_swiper');
     const hpWorkSwiperSlides = document.querySelectorAll('.hp_works_slide');
@@ -43,8 +41,6 @@ export function swiperInit() {
                 },
                 on: {
                     init: function () {
-                        console.log('Swiper initialized');
-
                         // add mouse hover listener to all slides
                         // update swiper measurements with each hover (since they expand on hover)
                         hpWorkSwiperSlides.forEach((slide) => {
@@ -71,7 +67,7 @@ export function swiperInit() {
     const teamSwiperContainer = document.querySelector('.team_card_list_swiper');
     if (teamSwiperContainer && window.innerWidth <= 767) {
         hpWorksSwiper = new Swiper(teamSwiperContainer, {
-            slidesPerView: 1.2,
+            slidesPerView: 1.1,
             spaceBetween: 14,
             // centeredSlides: true,
             // direction: 'horizontal',
@@ -79,6 +75,23 @@ export function swiperInit() {
             // autoWidth: true,
 
             // freeMode: true,
+
+            on: {
+                // update navigation active state
+                slideChange: function () {
+                    const items = document.querySelectorAll('.team_list_item');
+                    items.forEach(item => item.classList.remove('active'));
+                    if (items[this.activeIndex]) {
+                        items[this.activeIndex].classList.add('active');
+                    }
+                },
+            },
+        });
+
+        document.querySelectorAll('.team_list_item').forEach((item, index) => {
+            item.addEventListener('click', () => {
+                hpWorksSwiper.slideTo(index);
+            });
         });
     }
 

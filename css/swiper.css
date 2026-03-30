@@ -1,0 +1,9 @@
+/*
+*   ABOUT - Team Section
+*/
+
+@media screen and (min-width: 768px) {
+    .swiper-wrapper.team_card_list_container .swiper-slide {
+        height: auto;
+    }
+}
