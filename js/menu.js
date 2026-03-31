@@ -117,57 +117,6 @@ export function navBarMenu() {
     window.addEventListener("scroll", handleScroll);
 
 
-
-
-
-    // when the user hovers a link on the right side, 
-    // the image on the left of the submenu should change
-    //
-    const links  = document.querySelectorAll(".item_list_dropdown");
-    const box    = document.getElementById("submenu-image");
-    const layers = box ? box.querySelectorAll(".col_img") : [];
-
-    if (!links.length || layers.length < 2) return;
-
-    let active = 0; // index of the currently visible layer
-    const cache = new Map(); // remembers which URLs are loaded
-    cache.set("current", null);
-
-    function crossfade(url) {
-        if (!url || cache.get("current") === url) return;
-
-        const next = active ^ 1;           // toggle 0/1
-        const nextImg = layers[next];
-        const curImg  = layers[active];
-
-        const reveal = () => {
-        nextImg.classList.add("show");   // fade in next
-        curImg.classList.remove("show"); // fade out current
-        active = next;
-        cache.set("current", url);
-        };
-
-        // set src and wait for load to avoid any gap
-        nextImg.src = url;
-
-        // Prefer decode() for instant-ready swap when possible
-        if ("decode" in nextImg) {
-        nextImg.decode().then(() => {
-            cache.set(url, true);
-            reveal();
-        }).catch(() => {
-            // fallback if decode fails (SVG, etc.)
-            nextImg.addEventListener("load", () => { cache.set(url, true); reveal(); }, { once: true });
-        });
-        } else {
-        nextImg.addEventListener("load", () => { cache.set(url, true); reveal(); }, { once: true });
-        }
-    }
-
-    // Hover bindings
-    links.forEach(link => {
-        link.addEventListener("mouseenter", () => {
-        crossfade(link.getAttribute("data-img"));
         });
     });
 
