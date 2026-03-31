@@ -9,6 +9,7 @@ import { swiperInit } from './swiper.js';
 import { works } from './works.js';
 import { form } from './form.js';
 import { footerDate } from './footer-date.js';
+import { menuDynamicTheme } from './menu-dynamic-theme.js';
 
 
 window.tabletBreakpoint = 991;
@@ -24,6 +25,7 @@ function init() {
     swiperInit();
     form();
     footerDate();
+    menuDynamicTheme();
 
     console.log("Running main scripts loader");
 }

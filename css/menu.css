@@ -22,11 +22,11 @@
         background-color: var(--_primitives---colors--white);
     }
 
-    .padding-global.nav-top,
+    /* .padding-global.nav-top,
     .nav-left-line,
     .nav-right-line {
         background-color: var(--_primitives---colors--neutral-darkest);
-    }
+    } */
 
     .nav-left-svg,
     .nav-right-svg {
@@ -68,9 +68,17 @@
         color: var(--_primitives---colors--white);
     }
 
+    .nav_brand_icon {
+        opacity: 0;
+    }
+
     .menu-icon2_line-top {
         transform: rotate(45deg);
         top: 10px;
+    }
+
+    .menu-icon2_line-center {
+        opacity: 0;
     }
 
     .menu-icon2_line-bottom {
@@ -80,11 +88,11 @@
 
     @media screen and (max-width: 991px) {
         .menu-icon2_line-top {
-            top: 4px;
+            top: 2px;
         }
 
         .menu-icon2_line-bottom {
-            bottom: 4px;
+            bottom: 2px;
         }
     }
 
@@ -97,6 +105,53 @@
       position: fixed;
       z-index: -1;
     } */
+}
+
+
+/*
+*   NAV Dynamic Color Feature - changes theme over lighter and darker sections
+*   depending on initial navbar status (Base/Light)
+*/
+.navbar.lighter {
+    .nav_logo,
+    .mobile-menu-button {
+        background-color: var(--neutral-200);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        color: var(--color-scheme-1--text);
+    }
+
+    .nav_button_icon > div {
+        background-color: var(--color-scheme-1--text);
+    }
+
+    .menu-link {
+        background-color: var(--neutral-200);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        color: var(--neutral-900);
+    }
+}
+
+.navbar.darker {
+    .nav_logo,
+    .mobile-menu-button {
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+        color: var(--neutral-100);
+        background-color: #ffffff0a;
+    }
+
+    .nav_button_icon > div {
+        background-color: #ffffff0a;
+    }
+
+    .menu-link {
+        background-color: #ffffff0a;
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+        color: var(--neutral-100);
+    }
 }
 
 
