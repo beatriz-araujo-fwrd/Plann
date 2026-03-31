@@ -23,8 +23,8 @@ export function navBarMenu() {
             html.classList.remove("lock-viewport");
 
             // Restore scroll
-            body.style.position = '';
-            body.style.top = '';
+            // body.style.position = '';
+            // body.style.top = '';
             window.scrollTo(0, scrollY);
 
             gsap.to(mobileMenu, {
@@ -43,8 +43,8 @@ export function navBarMenu() {
             scrollY = window.scrollY;
 
             // Lock scroll
-            body.style.position = 'fixed';
-            body.style.top = `-${scrollY}px`;
+            // body.style.position = 'fixed';
+            // body.style.top = `-${scrollY}px`;
             body.classList.add("navbar-menu-open");
             html.classList.add("lock-viewport");
 
@@ -115,19 +115,6 @@ export function navBarMenu() {
     handleScroll();
 
     window.addEventListener("scroll", handleScroll);
-
-
-        });
-    });
-
-    // Initial image (from first link)
-    const first = links[0]?.getAttribute("data-img");
-    if (first) {
-        layers[active].src = first;
-        layers[active].classList.add("show");
-        cache.set(first, true);
-        cache.set("current", first);
-    }
 
     console.log("running navBarMenu()");
 
