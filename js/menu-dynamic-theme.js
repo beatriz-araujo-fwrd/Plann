@@ -1,7 +1,8 @@
 export function menuDynamicTheme() {
     // ---------------------------------------
     // NAV MENU DYNAMIC THEME COLOR CHANGE
-    // note: this feature presumes the navbar component always has the 'Base' theme, not 'Light'
+    // note: this feature presumes the navbar component has both a 'Base' and 
+    // 'Light' theme by default that vary with each page
 
     const navBar = document.querySelector('.navbar');
     const lightSections = document.querySelectorAll('.light_section');
@@ -47,7 +48,7 @@ export function menuDynamicTheme() {
                 }
             });
         });
-    }, 200);
+    }, 350);
 
     console.log("menuDynamicTheme");
 }
