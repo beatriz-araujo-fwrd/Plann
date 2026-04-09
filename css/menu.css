@@ -134,6 +134,15 @@ body:not(.navbar-menu-open) .navbar.lighter {
         background-color: var(--color-scheme-1--text);
     }
 
+    .locale {
+        background-color: var(--neutral-200);;
+        color: var(--neutral-900);
+    }
+
+    .locale::before {
+        background-color: var(--neutral-300);
+    }
+
     .menu-link {
         background-color: var(--neutral-200);
         -webkit-backdrop-filter: none;
@@ -154,6 +163,15 @@ body:not(.navbar-menu-open) .navbar.darker {
     .nav_button_icon > div {
         /* background-color: #ffffff0a; */
         background-color: var(--neutral-100);
+    }
+
+    .locale {
+        background-color: rgba(255, 255, 255, 0.04);
+        color: var(--neutral-100);
+    }
+
+    .locale::before {
+        background-color: var(--neutral-700);
     }
 
     .menu-link {
@@ -185,7 +203,7 @@ body.is-homepage.navbar-menu-open .md_menu_inner_cols .nav_menu_bg_gradient {
     background-color: var(--neutral-700);
     z-index: -1;
     border-radius: .5rem;
-    transition: left .2s ease;
+    transition: all .2s ease;
 }
 
 [data-wf--navbar-main--variant="light"] .locale::before {
