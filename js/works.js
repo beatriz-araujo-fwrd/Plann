@@ -2,6 +2,15 @@ export function works() {
 
     const worksSection = document.querySelector('.work_section');
 
+    // Work Case Link Redirect (for case links in Homepage and Works)
+    const workCaseLinks = document.querySelectorAll('.work_slide_inner');
+    if (workCaseLinks.length > 0) {
+        workCaseLinks.forEach(link => {
+            link.href += link.getAttribute('slug');
+        });
+    }
+
+
     if (worksSection && window.innerWidth > window.tabletBreakpoint) {
         let incr = 0
 
