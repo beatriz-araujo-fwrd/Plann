@@ -30,16 +30,34 @@ export function mainInit() {
         });
     }
 
-
+    // Preloader
     gsap.to('.preloader', {
         opacity: 0,
         delay: .1,
         duration: .5,
         ease: "power2.out",
-        onComplete: ()=> {
+        onComplete: () => {
             document.querySelector('.preloader').remove();
         }
     });
+
+
+    // Generic Hero Fade-in
+    // note: does not include homepage hero
+    const fadeInEls = document.querySelectorAll('.fade-in');
+
+    if (fadeInEls.length > 0 && !document.querySelector('.section_hero_hp')) {
+        gsap.from(fadeInEls, {
+            opacity: 0,
+            yPercent: 5,
+            duration: 1,
+            delay: 1,
+            stagger: .1,
+            ease: 'power2.out'
+        });
+    }
+
+
 
     console.log("Loading mainInit()");
 
